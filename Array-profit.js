@@ -5,14 +5,19 @@
 
 function getProfit(arr){
     let min = arr[0]
-    let max = arr[1]
     for(let char of arr){
         if(char < min){
             min = char 
-        }else if(char > max){
+        }
+    }
+    let newArr = (arr.slice(arr.indexOf(min), arr.length))
+    let max = newArr[0]
+    for(let char of newArr){
+        if(char > max){
             max = char
         }
     }
-    return max 
-
+    return max - min 
 }
+
+
